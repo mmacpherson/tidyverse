@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     clang  \
     ed \
     libhdf5-dev \
+    libomp-dev \
 && rm -rf /var/lib/apt/lists/*
 
 
@@ -24,6 +25,7 @@ RUN install2.r --error \
     ROCR \
     boot \
     brms \
+    caret \
     doMC \
     glmnet \
     glmnetUtils \
@@ -40,7 +42,6 @@ RUN install2.r --error \
 # -- TODO
 #    ----
 #    1. Install multidplyr for parallel tidyverse magic
-#    2. caret \ ## FAILS, looks like you need to install dependencies explicitly?
 
 
 # -- Thanks to Andrew Heiss for the template on which this is based.
