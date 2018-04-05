@@ -21,8 +21,11 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 
 RUN install2.r --error \
+    LiblineaR \
     PRROC \
     ROCR \
+    biglasso \
+    biglm \
     boot \
     brms \
     caret \
@@ -36,6 +39,7 @@ RUN install2.r --error \
     pROC \
     reticulate \
     rstan \
+    speedglm \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
