@@ -12,33 +12,37 @@ COPY R/Makevars /root/.R/Makevars
 #    and clang++ instead
 # -- Install ed, since nloptr needs it to compile.
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    ccache \
-    clang  \
+    # ccache \
+    # clang  \
     ed \
     libhdf5-dev \
     libomp-dev \
+    rsync \
 && rm -rf /var/lib/apt/lists/*
 
+# -- For purposes of speed when modifying the image, we split the package
+#    install into two pieces.
 
 RUN install2.r --error \
-    LiblineaR \
+    # LiblineaR \
     PRROC \
     ROCR \
+    biganalytics \
     biglasso \
     biglm \
-    boot \
-    brms \
+    # boot \
+    # brms \
     caret \
     doMC \
     glmnet \
     glmnetUtils \
-    hdf5r \
+    # hdf5r \
     interplot \
-    lme4 \
-    mice \
+    # lme4 \
+    # mice \
     pROC \
-    reticulate \
-    rstan \
+    # reticulate \
+    # rstan \
     speedglm \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
