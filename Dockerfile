@@ -12,8 +12,8 @@ COPY R/Makevars /root/.R/Makevars
 #    and clang++ instead
 # -- Install ed, since nloptr needs it to compile.
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    # ccache \
-    # clang  \
+    ccache \
+    clang  \
     ed \
     libhdf5-dev \
     libomp-dev \
