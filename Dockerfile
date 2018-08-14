@@ -20,30 +20,30 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     rsync \
 && rm -rf /var/lib/apt/lists/*
 
-# -- For purposes of speed when modifying the image, we split the package
-#    install into two pieces.
-
 RUN install2.r --error \
     # LiblineaR \
+    # boot \
+    # brms \
+    # hdf5r \
+    # lme4 \
+    # mice \
+    # reticulate \
+    # rstan \
     PRROC \
     ROCR \
+    RcppRoll \
     biganalytics \
     biglasso \
     biglm \
-    # boot \
-    # brms \
     caret \
     doMC \
+    ggthemes \
     glmnet \
     glmnetUtils \
-    # hdf5r \
     interplot \
-    # lme4 \
-    # mice \
     pROC \
-    # reticulate \
-    # rstan \
     speedglm \
+    # tidyquant \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
