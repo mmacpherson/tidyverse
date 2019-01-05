@@ -25,10 +25,10 @@ RUN install2.r --error \
     # boot \
     # brms \
     # hdf5r \
-    # lme4 \
     # mice \
     # reticulate \
     # rstan \
+    # tidyquant \
     PRROC \
     ROCR \
     RcppRoll \
@@ -37,13 +37,14 @@ RUN install2.r --error \
     biglm \
     caret \
     doMC \
+    effects \
     ggthemes \
     glmnet \
     glmnetUtils \
     interplot \
+    lme4 \
     pROC \
     speedglm \
-    # tidyquant \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
