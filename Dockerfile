@@ -21,30 +21,31 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 && rm -rf /var/lib/apt/lists/*
 
 RUN install2.r --error \
-    # LiblineaR \
-    # boot \
-    # brms \
-    # hdf5r \
-    # mice \
-    # reticulate \
-    # rstan \
-    # tidyquant \
-    PRROC \
-    ROCR \
-    RcppRoll \
-    biganalytics \
-    biglasso \
-    biglm \
-    caret \
-    doMC \
-    effects \
-    ggthemes \
-    glmnet \
-    glmnetUtils \
-    interplot \
-    lme4 \
-    pROC \
-    speedglm \
+  # LiblineaR \
+  # boot \
+  # hdf5r \
+  # mice \
+  # reticulate \
+  # tidyquant \
+  PRROC \
+  ROCR \
+  RcppRoll \
+  biganalytics \
+  biglasso \
+  biglm \
+  brms \
+  caret \
+  doMC \
+  effects \
+  ggthemes \
+  glmnet \
+  glmnetUtils \
+  interplot \
+  lme4 \
+  pROC \
+  rstan \
+  speedglm \
+  tidybayes \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
