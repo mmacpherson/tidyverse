@@ -1,7 +1,6 @@
 FROM rocker/tidyverse
 LABEL maintainer="Mike Macpherson <mmacpherson@users.noreply.github.com>"
 
-
 RUN mkdir -p $HOME/.R
 
 # $HOME doesn't exist in the COPY shell, so be explicit
@@ -35,7 +34,9 @@ RUN install2.r --error \
   biglm \
   brms \
   caret \
+  devtools \
   doMC \
+  docopt \
   effects \
   ggthemes \
   glmnet \
@@ -43,15 +44,14 @@ RUN install2.r --error \
   interplot \
   lme4 \
   pROC \
+  rsample \
   rstan \
   speedglm \
+  styler \
   tidybayes \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-
-# -- TODO
-#    ----
-#    1. Install multidplyr for parallel tidyverse magic
+RUN Rscript -e 'devtools::install_github("hadley/multidplyr")'
 
 
 # -- Thanks to Andrew Heiss for the template on which this is based.
