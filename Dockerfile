@@ -29,29 +29,37 @@ RUN install2.r --error \
   PRROC \
   ROCR \
   RcppRoll \
+  bayesplot \
   biganalytics \
   biglasso \
   biglm \
   brms \
+  broom.mixed \
   caret \
+  coda \
   devtools \
   doMC \
   docopt \
   effects \
+  ggeffects \
   ggthemes \
   glmnet \
   glmnetUtils \
   interplot \
   lme4 \
+  loo \
+  mvtnorm \
   pROC \
   rsample \
   rstan \
+  rstanarm \
   speedglm \
   styler \
   tidybayes \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 RUN Rscript -e 'devtools::install_github("hadley/multidplyr")'
+RUN Rscript -e 'devtools::install_github("rmcelreath/rethinking")'
 
 
 # -- Thanks to Andrew Heiss for the template on which this is based.
